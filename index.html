@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LandTrust Advisory | Land Due Diligence & Legal Advisory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS Variables for Theme */
+        :root {
+            --primary-dark: #0a192f;
+            --primary-blue: #1e3a8a;
+            --accent-blue: #3b82f6;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        section {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+
+        section:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-dark);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 60px;
+            padding: 0;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: 3.5rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            color: #cbd5e1;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .stat-item {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-left: 4px solid var(--primary-blue);
+            border-radius: 4px;
+        }
+
+        .stat-item h4 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: var(--primary-blue);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .service-card ul {
+            margin-top: 1rem;
+        }
+
+        .service-card li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .service-card li i {
+            color: var(--accent-blue);
+            margin-right: 8px;
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #e2e8f0;
+            z-index: 1;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            width: 200px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+            border: 4px solid var(--bg-light);
+        }
+
+        .step h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Knowledge Hub */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: var(--primary-blue);
+            font-weight: 500;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-blue);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .quote-icon {
+            color: var(--accent-blue);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 120px;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .cta-banner h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #020617;
+            color: #94a3b8;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: #94a3b8;
+            font-size: 1.25rem;
+        }
+
+        .social-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-dark);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-grid, .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 { font-size: 2.8rem; }
+            .process-steps { flex-direction: column; align-items: center; gap: 2rem; }
+            .process-steps::before { display: none; }
+            .step { width: 100%; max-width: 300px; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Add JS for mobile menu in production */
+            }
+            .menu-toggle { display: block; }
+            .hero-btns { flex-direction: column; }
+            .hero h1 { font-size: 2.2rem; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-container">
+            <a href="#home" class="logo">LandTrust <span>Advisory</span></a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#process">Process</a>
+                <a href="#insights">Insights</a>
+                <a href="#contact" class="btn-primary" style="padding: 6px 16px; border-radius: 4px; color: white;">Contact Us</a>
+            </div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Make Every Land Decision with Confidence</h1>
+            <p>Expert advisory for land verification, risk assessment, and legal clarity.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn btn-primary">Get Consultation</a>
+                <a href="#services" class="btn btn-outline"><i class="fas fa-download"></i> Download Land Checklist</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container about-grid">
+            <div class="about-text">
+                <h3>Land Due Diligence & Legal Advisory Experts</h3>
+                <p>Navigating land transactions requires more than just basic paperwork. It requires deep ground-level knowledge, an understanding of government processes, and foresight to prevent future disputes.</p>
+                <p>At LandTrust Advisory, we specialize in comprehensive risk assessment, ensuring your corporate or private land investments are legally sound, structurally secure, and completely transparent.</p>
+                <br>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-blue); margin-right: 10px;"></i> Deep domain expertise & revenue understanding</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-blue); margin-right: 10px;"></i> Government process navigation</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-blue); margin-right: 10px;"></i> Focus on total risk prevention</li>
+                </ul>
+            </div>
+            <div class="about-stats">
+                <div class="stat-item">
+                    <h4>500+</h4>
+                    <p>Acres Verified</p>
+                </div>
+                <div class="stat-item">
+                    <h4>Zero</h4>
+                    <p>Litigation Post-Advisory</p>
+                </div>
+                <div class="stat-item">
+                    <h4>15+</h4>
+                    <p>Years Legal Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h4>100%</h4>
+                    <p>Client Confidentiality</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Corporate Advisory Services</h2>
+            <p class="section-subtitle">Comprehensive legal and real estate intelligence for secure transactions.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-shield-alt service-icon"></i>
+                    <h3>Land Safety Check</h3>
+                    <p>A fast, high-level overview before you commit.</p>
+                    <ul>
+                        <li><i class="fas fa-angle-right"></i> Quick risk evaluation</li>
+                        <li><i class="fas fa-angle-right"></i> Basic document verification</li>
+                        <li><i class="fas fa-angle-right"></i> Red flag identification</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-file-contract service-icon"></i>
+                    <h3>Complete Due Diligence</h3>
+                    <p>Exhaustive legal and background verification.</p>
+                    <ul>
+                        <li><i class="fas fa-angle-right"></i> Chain of Title verification</li>
+                        <li><i class="fas fa-angle-right"></i> Legal risk analysis</li>
+                        <li><i class="fas fa-angle-right"></i> Government record validation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-handshake service-icon"></i>
+                    <h3>Land Acquisition Advisory</h3>
+                    <p>End-to-end support for large-scale purchases.</p>
+                    <ul>
+                        <li><i class="fas fa-angle-right"></i> Strategy consulting</li>
+                        <li><i class="fas fa-angle-right"></i> Negotiation guidance</li>
+                        <li><i class="fas fa-angle-right"></i> Registration support</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-gavel service-icon"></i>
+                    <h3>Dispute & Litigation</h3>
+                    <p>Strategic advisory for existing land conflicts.</p>
+                    <ul>
+                        <li><i class="fas fa-angle-right"></i> Case understanding & audit</li>
+                        <li><i class="fas fa-angle-right"></i> Risk mitigation strategy</li>
+                        <li><i class="fas fa-angle-right"></i> Documentation support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process">
+        <div class="container">
+            <h2 class="section-title">How We Work</h2>
+            <p class="section-subtitle">A streamlined, transparent approach to securing your assets.</p>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Submit Details</h4>
+                    <p>Share property documents and your primary objectives.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Record Analysis</h4>
+                    <p>We audit government records and trace title history.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Risk Report</h4>
+                    <p>Receive a clear, jargon-free evaluation of all legal risks.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Advisory & Execution</h4>
+                    <p>Actionable next steps to proceed safely or step away.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="insights">
+        <div class="container">
+            <h2 class="section-title">Case Insights & Knowledge</h2>
+            <p class="section-subtitle">Latest intelligence in real estate law and land advisory.</p>
+            
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <span style="color: var(--text-light); font-size: 0.85rem; font-weight: 600; text-transform: uppercase;">Due Diligence</span>
+                        <h4 style="margin-top: 10px;">Before Buying Land: 7 Critical Checks</h4>
+                        <p style="margin-bottom: 15px; font-size: 0.95rem;">Missing even one of these crucial steps can lead to decades of litigation. Learn what to look for before signing.</p>
+                        <a href="#" class="read-more">Read Insight <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <span style="color: var(--text-light); font-size: 0.85rem; font-weight: 600; text-transform: uppercase;">Risk Management</span>
+                        <h4 style="margin-top: 10px;">Common Land Fraud Mistakes</h4>
+                        <p style="margin-bottom: 15px; font-size: 0.95rem;">An analysis of recent high-profile real estate frauds and how institutional buyers could have avoided them.</p>
+                        <a href="#" class="read-more">Read Insight <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-content">
+                        <span style="color: var(--text-light); font-size: 0.85rem; font-weight: 600; text-transform: uppercase;">Legal Process</span>
+                        <h4 style="margin-top: 10px;">How to Verify Property Documents</h4>
+                        <p style="margin-bottom: 15px; font-size: 0.95rem;">A step-by-step guide to understanding encumbrance certificates, mutation extracts, and historical titles.</p>
+                        <a href="#" class="read-more">Read Insight <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" style="background-color: var(--primary-dark); color: var(--white);">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--white);">Trusted by Corporations & Investors</h2>
+            <p class="section-subtitle" style="color: #cbd5e1;">Real-world impact driven by precise legal intelligence.</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card" style="background: #1e293b; border-color: var(--accent-blue); color: var(--white);">
+                    <i class="fas fa-quote-left quote-icon" style="color: var(--white);"></i>
+                    <p>"LandTrust Advisory identified a massive title gap in a 50-acre acquisition that our previous counsel missed. Their ground-level intelligence saved us from an unrecoverable bad investment."</p>
+                    <div style="margin-top: 1.5rem; font-weight: 600;">— Director of Real Estate, National Logistics Firm</div>
+                </div>
+                <div class="testimonial-card" style="background: #1e293b; border-color: var(--accent-blue); color: var(--white);">
+                    <i class="fas fa-quote-left quote-icon" style="color: var(--white);"></i>
+                    <p>"Their due diligence reports are the most comprehensive we've seen. Clear, decisive, and entirely stripped of confusing legal jargon. They are our go-to advisory partners."</p>
+                    <div style="margin-top: 1.5rem; font-weight: 600;">— Managing Partner, Private Equity Group</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container contact-wrapper">
+            <div>
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Let's Secure Your Investment</h2>
+                <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--text-light);">Reach out for a confidential consultation regarding your land acquisition, verification, or litigation advisory needs.</p>
+                
+                <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 50px; height: 50px; background: var(--bg-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-blue); font-size: 1.25rem;">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h5 style="font-size: 1rem; color: var(--text-light);">Email Us</h5>
+                        <p style="font-weight: 600;">advisory@landtrust.com</p>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 50px; height: 50px; background: var(--bg-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary-blue); font-size: 1.25rem;">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div>
+                        <h5 style="font-size: 1rem; color: var(--text-light);">Call Us</h5>
+                        <p style="font-weight: 600;">+1 (555) 123-4567</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form onsubmit="event.preventDefault(); alert('Thank you for reaching out. Our advisory team will contact you shortly.');">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required placeholder="John Doe">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required placeholder="john@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" required placeholder="+1 234 567 8900">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="property">Property Type / Inquiry Nature</label>
+                        <select id="property" class="form-control">
+                            <option>Commercial Land</option>
+                            <option>Agricultural Land</option>
+                            <option>Residential Development</option>
+                            <option>Litigation / Dispute</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" required placeholder="Briefly describe your requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Book Consultation</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta-banner">
+        <div class="container">
+            <h2>Avoid costly mistakes. Make informed land decisions.</h2>
+            <a href="#contact" class="btn" style="background: var(--white); color: var(--primary-dark);">Schedule a Strategy Call</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#home" class="logo" style="color: var(--white);">LandTrust <span style="color: var(--accent-blue);">Advisory</span></a>
+                    <p style="margin-top: 1.5rem; font-size: 0.95rem;">Premium consulting authority in land advisory, rigorous due diligence, and legal risk management for modern enterprises.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Land Safety Check</a></li>
+                        <li><a href="#services">Due Diligence</a></li>
+                        <li><a href="#services">Acquisition Advisory</a></li>
+                        <li><a href="#services">Dispute Resolution</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Firm</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#insights">Insights</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LandTrust Advisory. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/15551234567" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            const nav = document.querySelector('.nav-links');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+                nav.style.flexDirection = 'column';
+                nav.style.position = 'absolute';
+                nav.style.top = '60px';
+                nav.style.left = '0';
+                nav.style.width = '100%';
+                nav.style.backgroundColor = 'white';
+                nav.style.padding = '1rem';
+                nav.style.boxShadow = '0 10px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
