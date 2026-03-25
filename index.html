@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LandTrust Advisory | Land Due Diligence & Legal Advisory</title>
+    <title>LandDiligence Advisory | Land Due Diligence & Legal Advisory</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -381,29 +381,9 @@
             padding: 3rem;
             border-radius: 8px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
-            font-family: inherit;
-        }
-
-        textarea.form-control {
-            resize: vertical;
-            height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         /* CTA Banner */
@@ -528,7 +508,7 @@
 
     <nav>
         <div class="container nav-container">
-            <a href="#home" class="logo">LandTrust <span>Advisory</span></a>
+            <a href="#home" class="logo">LandDiligence <span>Advisory</span></a>
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
@@ -547,7 +527,6 @@
             <p>Expert advisory for land verification, risk assessment, and legal clarity.</p>
             <div class="hero-btns">
                 <a href="#contact" class="btn btn-primary">Get Consultation</a>
-                <a href="#services" class="btn btn-outline"><i class="fas fa-download"></i> Download Land Checklist</a>
             </div>
         </div>
     </section>
@@ -557,7 +536,7 @@
             <div class="about-text">
                 <h3>Land Due Diligence & Legal Advisory Experts</h3>
                 <p>Navigating land transactions requires more than just basic paperwork. It requires deep ground-level knowledge, an understanding of government processes, and foresight to prevent future disputes.</p>
-                <p>At LandTrust Advisory, we specialize in comprehensive risk assessment, ensuring your corporate or private land investments are legally sound, structurally secure, and completely transparent.</p>
+                <p>At LandDiligence Advisory, we specialize in comprehensive risk assessment, ensuring your corporate or private land investments are legally sound, structurally secure, and completely transparent.</p>
                 <br>
                 <ul style="list-style: none;">
                     <li style="margin-bottom: 10px;"><i class="fas fa-check-circle" style="color: var(--primary-blue); margin-right: 10px;"></i> Deep domain expertise & revenue understanding</li>
@@ -711,7 +690,7 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card" style="background: #1e293b; border-color: var(--accent-blue); color: var(--white);">
                     <i class="fas fa-quote-left quote-icon" style="color: var(--white);"></i>
-                    <p>"LandTrust Advisory identified a massive title gap in a 50-acre acquisition that our previous counsel missed. Their ground-level intelligence saved us from an unrecoverable bad investment."</p>
+                    <p>"LandDiligence Advisory identified a massive title gap in a 50-acre acquisition that our previous counsel missed. Their ground-level intelligence saved us from an unrecoverable bad investment."</p>
                     <div style="margin-top: 1.5rem; font-weight: 600;">— Director of Real Estate, National Logistics Firm</div>
                 </div>
                 <div class="testimonial-card" style="background: #1e293b; border-color: var(--accent-blue); color: var(--white);">
@@ -735,7 +714,7 @@
                     </div>
                     <div>
                         <h5 style="font-size: 1rem; color: var(--text-light);">Email Us</h5>
-                        <p style="font-weight: 600;">advisory@landtrust.com</p>
+                        <p style="font-weight: 600;">landdiligenceadvisory@gmail.com</p>
                     </div>
                 </div>
 
@@ -745,43 +724,30 @@
                     </div>
                     <div>
                         <h5 style="font-size: 1rem; color: var(--text-light);">Call Us</h5>
-                        <p style="font-weight: 600;">+1 (555) 123-4567</p>
+                        <p style="font-weight: 600;">+91 7869999794</p>
                     </div>
                 </div>
             </div>
 
             <div class="contact-form">
-                <form onsubmit="event.preventDefault(); alert('Thank you for reaching out. Our advisory team will contact you shortly.');">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" class="form-control" required placeholder="John Doe">
+                <h3 style="margin-bottom: 1.5rem; text-align: center;">Choose Your Inquiry Type</h3>
+                <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+                    
+                    <div style="background: var(--bg-light); padding: 2rem; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center;">
+                        <i class="fas fa-file-signature" style="font-size: 2rem; color: var(--primary-blue); margin-bottom: 1rem;"></i>
+                        <h4 style="margin-bottom: 0.5rem;">Client Enquiry</h4>
+                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem;">Looking for land due diligence, risk assessment, or legal advisory?</p>
+                        <a href="https://forms.gle/PTCrmA1zGWvgDHcy5" target="_blank" class="btn btn-primary" style="width: 100%; display: block;">Submit Enquiry</a>
                     </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" required placeholder="john@company.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-control" required placeholder="+1 234 567 8900">
-                        </div>
+
+                    <div style="background: var(--bg-light); padding: 2rem; border-radius: 8px; border: 1px solid #e2e8f0; text-align: center;">
+                        <i class="fas fa-users" style="font-size: 2rem; color: var(--primary-blue); margin-bottom: 1rem;"></i>
+                        <h4 style="margin-bottom: 0.5rem;">Join Our Firm</h4>
+                        <p style="color: var(--text-light); font-size: 0.95rem; margin-bottom: 1.5rem;">Interested in building a career in real estate law and land advisory?</p>
+                        <a href="https://forms.gle/GHAcpoAcEQbS7fvs8" target="_blank" class="btn btn-primary" style="width: 100%; display: block; background-color: var(--text-main);">Apply Now</a>
                     </div>
-                    <div class="form-group">
-                        <label for="property">Property Type / Inquiry Nature</label>
-                        <select id="property" class="form-control">
-                            <option>Commercial Land</option>
-                            <option>Agricultural Land</option>
-                            <option>Residential Development</option>
-                            <option>Litigation / Dispute</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" class="form-control" required placeholder="Briefly describe your requirements..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Book Consultation</button>
-                </form>
+
+                </div>
             </div>
         </div>
     </section>
@@ -797,7 +763,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <a href="#home" class="logo" style="color: var(--white);">LandTrust <span style="color: var(--accent-blue);">Advisory</span></a>
+                    <a href="#home" class="logo" style="color: var(--white);">LandDiligence <span style="color: var(--accent-blue);">Advisory</span></a>
                     <p style="margin-top: 1.5rem; font-size: 0.95rem;">Premium consulting authority in land advisory, rigorous due diligence, and legal risk management for modern enterprises.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -832,12 +798,12 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 LandTrust Advisory. All rights reserved.</p>
+                <p>&copy; 2026 LandDiligence Advisory. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/15551234567" target="_blank" class="whatsapp-float">
+    <a href="https://wa.me/7869999794" target="_blank" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
     </a>
 
